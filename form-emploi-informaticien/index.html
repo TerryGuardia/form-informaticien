@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EXO HTML Formulaire - recherche d'emploi version Informaticien</title>
+    <style>
+        body {
+            background-color: azure;
+        }
+
+        main {
+            display: flex;
+            justify-content: center;
+        }
+
+        form {
+            background-color: #eee4e1;
+            width: fit-content;
+            padding: 30px;
+            box-shadow: rgba(60, 66, 87, 0.12) 15px 15px 30px 15px, rgba(0, 0, 0, 0.12) 0px 3px 6px 0px;
+        }
+
+        h1 {
+            margin: 0 0 10% 25%;
+            color: #b2967d;
+        }
+        p {
+            color: #b2967d;
+            font-size: 12px;
+        }
+
+        label {
+            color: #b2967d;
+        }
+
+        form div {
+            display: flex;
+        }
+
+        form div div {
+            display: flex;
+            flex-direction: column;
+            padding-bottom: 15px;
+        }
+
+        #sexe {
+            flex-direction: row;
+        }
+
+        select {
+            margin-bottom: 15px;
+        }
+
+        button {
+            width: 50%;
+            height: 50px;
+            border-radius: 30px;
+            margin: 30px 0 0 25%;
+            background-color: #b2967d;
+            color: #eee4e1;
+        }
+
+        .champ {
+            width: 50%;
+            border-radius: 5px;
+        }
+
+        .mail {
+            width: 90%;
+            border-radius: 5px;
+        }
+
+        #mail:invalid,
+        #fname:invalid,
+        #lname:invalid {
+            background-color: rgba(191, 21, 55, 0.591);
+        }
+    </style>
+</head>
+
+<body>
+    <main>
+        <form action="" method="post" enctype="multipart/form-data">
+            <h1>Formulaire</h1>
+            <p>Les champs marqué du symbole * sont obligatoires.</p>
+            <div>
+                <div>
+                    <div>
+                        <label for="lname">*Nom : </label>
+                        <input type="text" name="lname" class="champ" id="lname" minlength="2" maxlength="45"
+                            pattern="^[^0-9]+$" required>
+                    </div>
+                    <div>
+                        <label for="fname">*Prénom : </label>
+                        <input type="text" name="fname" class="champ" id="fname" minlength="2" maxlength="45"
+                            pattern="^[^0-9]+$" required>
+                    </div>
+                    <div>
+                        <label for="mail">*Adresse Email : </label>
+                        <input type="email" name="mail" class="mail" id="mail"
+                            pattern="^[a-zA-Z0-9.!#$%&’*+=?^_`{|}~-]+@[a-zA-Z0-9-]+\.[com|org|net|fr]{2,3}+$" required>
+                    </div>
+                    <div id="sexe">
+                        Sexe :
+                        <label for="f">Féminin</label>
+                        <input type="radio" name="sexe" id="f" checked>
+                        <label for="m">Masculin</label>
+                        <input type="radio" name="sexe" id="m">
+                    </div>
+                    <input type="file" name="mon-fichier" accept=".png, .jpeg">
+                </div>
+                <div>
+                    <label for="pays">Votre Pays : </label>
+                    <select name="pays" id="pays">
+                        <option value="fr" selected>FRANCE</option>
+                        <option value="en">ANGLETERRE</option>
+                        <option value="de">ALLEMAGNE</option>
+                        <option value="it">ITALIE</option>
+                        <option value="ch">SUISSE</option>
+                        <option value="es">ESPAGNE</option>
+                    </select>
+                    <label for="langages">Langages préférés : </label>
+                    <select name="langages" id="langages" multiple>
+                        <option value="fr">FRANCE</option>
+                        <option value="en">ANGLETERRE</option>
+                        <option value="de">ALLEMAGNE</option>
+                        <option value="it">ITALIE</option>
+                        <option value="ch">SUISSE</option>
+                        <option value="es">ESPAGNE</option>
+                    </select>
+                </div>
+            </div>
+            <div>
+                <button class="input">Envoyez</button>
+            </div>
+        </form>
+    </main>
+</body>
+
+</html>
